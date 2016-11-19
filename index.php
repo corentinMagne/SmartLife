@@ -6,10 +6,8 @@
 <link href="style/global.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="defileParent alert-box">
-		<span class="defile" 
-		data-text="Alerte : Il y a une inondation au nord de la ville - Alerte : Une forte montée des eaux est prévue dans 2 jours - Alerte : Des vents violents sont à prévoir dans 2 heures"> 
-	</span>
-</div>
+	<div class="alert-box">
+		<marquee>Alerte : Il y a une inondation au nord de la ville - Alerte : Une forte montée des eaux est prévue dans 2 jours - Alerte : Des vents violents sont à prévoir dans 2 heures</marquee>
+	</div>
 </body>
 </html>
