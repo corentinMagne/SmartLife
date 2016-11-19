@@ -38,24 +38,37 @@ $req->closeCursor();
             <article>
             	<?php
 				if (isset($_POST['email']) AND isset($_POST['pass'])) {
+                    $email = $_POST['email'];
+                    $pass = $_POST['pass'];
+                    $req = $bdd->prepare('SELECT email, pass FROM users where mail = ? AND pass = ?');
+                    $req->execute(array($email, $pass));
+                    $donnees = $req->fetchAll();
+                    if ($donnees)
+                    {
+                        echo "YES";
+                    }
+                    $req->closeCursor();
             	?>
-            	yes<br>
+            	
+                <p>
+                    Je suis co
+                </p>
+
             	<?php
             	} else {
             	?>
-            	yes1<br>
+                <p>
+                    <form action="#" method="post">
+                        <p>
+                            <input type="text" id="email" name="email" />
+                            <input type="password" id="pass" name="pass" />
+                            <input type="submit" value="Connexion" />
+                        </p>
+                    </form>
+                </p>
             	<?php
             	}
             	?>
-            	<p>
-					<form action="#" method="post">
-						<p>
-    						<input type="text" id="email" name="email" />
-    						<input type="password" id="pass" name="pass" />
-    						<input type="submit" value="Connexion" />
-						</p>
-					</form>
-            	</p>
             </article>
         </section>       
         <footer>
