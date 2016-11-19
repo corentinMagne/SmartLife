@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Hackathon</title>
-<link href="global/style/global.css" rel="stylesheet" type="text/css">
+<link href="style/global.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<div class="defileParent alert-box">
