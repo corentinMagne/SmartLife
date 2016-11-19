@@ -13,12 +13,13 @@
             <nav>
                 <ul>
                     <li><a href="index.php">Accueil</a></li>
+                    <li><a href="disconnect.php">Deco</a></li>
                 </ul>
             </nav>
         </header>
         <section>
             <article>
-                <?php echo $dataUser['id']; ?>
+                <?php var_dump($dataUser); ?>
             </article>
         </section>       
         <footer>
