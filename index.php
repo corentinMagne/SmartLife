@@ -11,7 +11,7 @@
         <header>
             <nav>
                 <ul>
-                    <li><a href="#">Accueil</a></li>
+                    <li><a href="index.php">Accueil</a></li>
                 </ul>
             </nav>
         </header>
@@ -26,7 +26,6 @@
                     $donnees = $req->fetch();
                     if ($donnees)
                     {
-                        session_start();
                         $_SESSION['id'] = $donnees['id'];
                         echo "Connected" . "<br />";
                     } else {
