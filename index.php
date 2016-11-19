@@ -27,7 +27,11 @@
                     if ($donnees)
                     {
                         $_SESSION['id'] = $donnees['id'];
-                        echo "Connected" . "<br />";
+                ?>
+                <SCRIPT LANGUAGE="JavaScript"> 
+                    document.location.href="membres/index.php"
+                </SCRIPT>
+                <?php
                     } else {
                 ?>
                 <p>

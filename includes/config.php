@@ -7,5 +7,13 @@ catch(Exception $e)
 {
     die('Erreur : '.$e->getMessage());
 }
+
 session_start();
+
+if (isset($_SESSION['id']))
+{
+	$user = $bdd->prepare('SELECT * FROM users where id = ?');
+    $user->execute(array($_SESSION['id']));
+    $dataUser = $user->fetch();
+}
 ?>
