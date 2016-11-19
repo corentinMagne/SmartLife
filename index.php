@@ -1,23 +1,4 @@
 <?php require('includes/config.php'); ?>
-
-<?php
-$req = $bdd->prepare('SELECT * FROM users');
-$req->execute();
-while ($donnees = $req->fetch())
-{
-?>
-    <p>
-    	<?php echo $donnees['phone']; ?>
-   </p>
-<?php
-}
-
-$req->closeCursor();
-
-?>
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -40,20 +21,23 @@ $req->closeCursor();
 				if (isset($_POST['email']) AND isset($_POST['pass'])) {
                     $email = $_POST['email'];
                     $pass = $_POST['pass'];
-                    $req = $bdd->prepare('SELECT email, pass FROM users where mail = ? AND pass = ?');
+                    $req = $bdd->prepare('SELECT id, mail, pass FROM users where mail = ? AND pass = ?');
                     $req->execute(array($email, $pass));
-                    $donnees = $req->fetchAll();
+                    $donnees = $req->fetch();
                     if ($donnees)
                     {
-                        echo "YES";
+                        session_start();
+                        $_SESSION['id'] = $donnees['id'];
+                        echo "Connected" . "<br />";
+                    } else {
+                ?>
+                <p>
+                    Mot de passe / Email invalide
+                </p>
+                <?php
                     }
                     $req->closeCursor();
             	?>
-            	
-                <p>
-                    Je suis co
-                </p>
-
             	<?php
             	} else {
             	?>
